@@ -290,5 +290,5 @@ Result of execution:
 To execute the tests, go to the folder `Front/tests-mocha` and run the following commands:
 - For all exercises: `npx mocha *.spec.js`
 
-![](/Users/lucas/Documents/GitHub/TP1-ST2AWD/Ressources/Screenshot 2024-10-03 at 19.57.11.png)
+![](https://raw.githubusercontent.com/LucasKoc/TP1-ST2AWD/refs/heads/main/Ressources/Screenshot%202024-10-03%20at%2019.57.11.png)
 
