@@ -43,7 +43,7 @@ Front contain the exercises to implement and the tests run with mocha.
 
 ```
 
-### Exercise 1
+### Exercise 1 - Implement sum(...terms)
 
 To execute files, go to folder `Front` and run the following commands:
 - For Execution: `node src/exo1.js`
@@ -51,16 +51,17 @@ To execute files, go to folder `Front` and run the following commands:
 
 Test run is already provided.
 
+The objective of this exercise is to implement a function that takes an array of numbers and return the sum of all elements.
 The code is completed with a check for the length of the array. If the array is empty, the function raise an error.
 Sum is added in a for loop. If the element is not a number, the function raise an error.
 
+Demo:
 ```js
 // For demonstration purpose, we add try catch block to handle intended errors
 try {console.log(sumV1())} catch (e) {console.log(e.message)}
 try {console.log(sumV1(1))} catch (e) {console.log(e.message)}
 try {console.log(sumV1(1, 2, 3))} catch (e) {console.log(e.message)}
 try {console.log(sumV1('Bonjour', 2, 3))} catch (e) {console.log(e.message)}
-
 ```
 Result of execution:
 ```markdown
@@ -69,3 +70,225 @@ At least one number is expected
 6
 All parameters must be numbers
 ```
+
+### Exercise 2 - Implement filter(array, predicate)
+
+To execute files, go to folder `Front` and run the following commands:
+- For Execution: `node src/exo2.js`
+- For Test run: `npx mocha tests-mocha/exo2.spec.js`
+
+Test run is already provided.
+
+The objective of this exercise is to implement a function that takes an array, and a predicate function,  and return a new array with all elements that satisfy the predicate function.
+
+Demo:
+```js
+const array = [1, 2, 3, 4, 5]
+const filteredArray = filter(array, item => item > 2)
+console.log(filteredArray)
+```
+Result of execution:
+```markdown
+[ 3, 4, 5 ]
+```
+
+### Exercise 3 - Implement map(array, transform)
+
+To execute files, go to folder `Front` and run the following commands:
+- For Execution: `node src/exo3.js`
+- For Test run: `npx mocha tests-mocha/exo3.spec.js`
+
+Test run is **not provided**. The test run is located in the file `Front/tests-mocha/exo3.spec.js`. It follows the example on the subject file (Result of tests run at the end of the file).
+
+The objective of this exercise is to implement a function that takes an array and return a new array with all elements transformed by the transform function.
+
+Demo:
+```js
+const array = [1, 2, 3, 4, 5];
+const doubled = map(array, item => item * 2);
+console.log(doubled);
+```
+
+Result of execution:
+```markdown
+[ 2, 4, 6, 8, 10 ]
+```
+
+### Exercise 4/5 - Basic CSV parsing into literal objects, Computes stats about contributions
+
+To execute files, go to folder `Front` and run the following commands:
+- For Execution: `node src/exo4-exo5.js`
+- For Test run: `npx mocha tests-mocha/exo4-exo5.spec.js`
+
+Test run is **not provided**. The test run is located in the file `Front/tests-mocha/exo4-exo5.spec.js`. It follows the example on the subject file (Result of tests run at the end of the file).
+
+The objective of this exercise is to implement a function that takes a CSV file and analyse it trough multiple functions.
+
+#### Exercise 4 - Basic CSV parsing into literal objects
+
+This question treat about fetching the data from the CSV file and parse it into an array of objects.
+To pass the test run for this exercise, the function `pullAndParseCsv` must be implemented instead of `processData`. The function return a promise that resolve the CSV data.
+
+Demo:
+```js
+pullAndAnalyzeCsv().then(console.log).catch(console.error);
+```
+
+Result of execution:
+```js
+{
+    totalContributors: 3977,
+    projectCount: 3977,
+    mostActiveContributor: 'jim',
+    averageLength: 14.148101584108625,
+    firstProjectName: [
+        'abdera',     'abdera',     'abdera',     'abdera',     'abdera',
+        'abdera',     'abdera',     'abdera',     'abdera',     'abdera',
+        'abdera',     'abdera',     'abdera',     'abdera',     'abdera',
+        'abdera',     'abdera',     'abdera',     'abdera',     'abdera',
+        'abdera',     'abdera',     'abdera',     'abdera',     'abdera',
+        'abdera',     'abdera',     'abdera',     'abdera',     'abdera',
+        'abdera',     'abdera',     'abdera',     'abdera',     'abdera',
+        'abdera',     'abdera',     'abdera',     'abdera',     'abdera',
+        'abdera',     'abdera',     'abdera-pmc', 'abdera-pmc', 'abdera-pmc',
+        'abdera-pmc', 'abdera-pmc', 'abdera-pmc', 'abdera-pmc', 'abdera-pmc',
+        'abdera-pmc', 'abdera-pmc', 'abdera-pmc', 'abdera-pmc', 'abdera-pmc',
+        'abdera-pmc', 'abdera-pmc', 'abdera-pmc', 'abdera-pmc', 'abdera-pmc',
+        'abdera-pmc', 'abdera-pmc', 'abdera-pmc', 'abdera-pmc', 'abdera-pmc',
+        'abdera-pmc', 'accumulo',   'accumulo',   'accumulo',   'accumulo',
+        'accumulo',   'accumulo',   'accumulo',   'accumulo',   'accumulo',
+        'accumulo',   'accumulo',   'accumulo',   'accumulo',   'accumulo',
+        'accumulo',   'accumulo',   'accumulo',   'accumulo',   'accumulo',
+        'accumulo',   'accumulo',   'accumulo',   'accumulo',   'accumulo',
+        'accumulo',   'accumulo',   'accumulo',   'accumulo',   'accumulo',
+        'accumulo',   'accumulo',   'accumulo',   'accumulo',   'accumulo',
+        ... 40473 more items
+    ]
+}
+```
+
+The feteched data is passed to the function `parseCsvFunctional` that return an array of objects.
+
+Demo:
+```js
+const contributions = parseCsvFunctional(csvText);
+console.log(contributions);
+```
+
+Result of execution:
+```js
+[
+  {
+    username: 'aadamchik',
+    website: null,
+    realName: 'Andrus Adamchik',
+    projectName: 'apsite'
+  },
+  {
+    username: 'aadamchik',
+    website: null,
+    realName: 'Andrus Adamchik',
+    projectName: 'cayenne'
+  },
+    [...]
+]
+```
+
+#### Exercise 5.1 - The first project's name in ascending alphabetic order.
+
+This question treat about fetching the first project's name in ascending alphabetic order. It must treat case-insensitive manner and handle diacritics.
+
+Demo:
+```js
+const firstProjectName = getFirstProjectName(contributions);
+console.log(firstProjectName);
+```
+
+Result of execution:
+```js
+abdera
+```
+
+#### Exercise 5.2 - The number of unique contributors.
+
+This question is about getting the number of unique contributors.
+
+Demo:
+```js
+const uniqueContributors = unique(contributions, contribution => contribution.username);
+const totalContributors = uniqueContributors.length;
+console.log(totalContributors);
+```
+
+Result of execution:
+```js
+3977
+```
+
+#### Exercise 5.3 - The average length of contributors' real name.
+
+This question is about getting the average length of contributors' name. We're working on unique names.
+Here, we will use the uniqueContributors array from the previous question.
+
+Demo:
+```js
+const averageLength = averageLengthContributorName(uniqueContributors);
+console.log(averageLength);
+```
+
+Result of execution:
+```js
+14.148101584108625
+```
+
+#### Exercise 5.4 - The most active contributor.
+
+This question is about getting the most active contributor.
+First we will group contribution by username, sorting by contribution count and return the first element.
+We will use the function fetchTop10 (will be used in the next question) to get the first element.
+
+Demo:
+```js
+const contributorProjectsCount = groupBy(contributions, contribution => contribution.username);
+const sortedContributorProjectsByCount = sortBy(Object.entries(contributorProjectsCount), a => a[1], 'desc');
+const mostActiveContributor = fetchTop10(sortedContributorProjectsByCount)[0];
+```
+
+Result of execution:
+```js
+'jim'
+```
+
+#### Exercise 5.5 - The 10 most active contributors.
+
+This question is about getting the 10 most active contributors.
+We will use the function fetchTop10 to get the first 10 elements.
+
+Demo:
+```js
+console.log(fetchTop10(sortedContributionProjectsByCount));
+```
+
+Result of execution:
+```js
+[
+    [ 'jim', 185 ],
+    [ 'jukka', 156 ],
+    [ 'bdelacretaz', 141 ],
+    [ 'mattmann', 134 ],
+    [ 'gnodet', 124 ],
+    [ 'olamy', 118 ],
+    [ 'simonetripodi', 116 ],
+    [ 'djencks', 113 ],
+    [ 'bimargulies', 110 ],
+    [ 'rubys', 110 ]
+]
+```
+
+### Appendix - Execution of the tests
+
+To execute the tests, go to the folder `Front/tests-mocha` and run the following commands:
+- For all exercises: `npx mocha *.spec.js`
+
+![](/Users/lucas/Documents/GitHub/TP1-ST2AWD/Ressources/Screenshot 2024-10-03 at 19.57.11.png)
+
