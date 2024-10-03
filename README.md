@@ -55,7 +55,7 @@ The objective of this exercise is to implement a function that takes an array of
 The code is completed with a check for the length of the array. If the array is empty, the function raise an error.
 Sum is added in a for loop. If the element is not a number, the function raise an error.
 
-Demo:
+**<ins>Demo:</ins>**
 ```js
 // For demonstration purpose, we add try catch block to handle intended errors
 try {console.log(sumV1())} catch (e) {console.log(e.message)}
@@ -63,7 +63,7 @@ try {console.log(sumV1(1))} catch (e) {console.log(e.message)}
 try {console.log(sumV1(1, 2, 3))} catch (e) {console.log(e.message)}
 try {console.log(sumV1('Bonjour', 2, 3))} catch (e) {console.log(e.message)}
 ```
-Result of execution:
+**<ins>Result of execution:</ins>**
 ```markdown
 At least one number is expected
 1
@@ -81,13 +81,13 @@ Test run is already provided.
 
 The objective of this exercise is to implement a function that takes an array, and a predicate function,  and return a new array with all elements that satisfy the predicate function.
 
-Demo:
+**<ins>Demo:</ins>**
 ```js
 const array = [1, 2, 3, 4, 5]
 const filteredArray = filter(array, item => item > 2)
 console.log(filteredArray)
 ```
-Result of execution:
+**<ins>Result of execution:</ins>**
 ```markdown
 [ 3, 4, 5 ]
 ```
@@ -102,14 +102,14 @@ Test run is **not provided**. The test run is located in the file `Front/tests-m
 
 The objective of this exercise is to implement a function that takes an array and return a new array with all elements transformed by the transform function.
 
-Demo:
+**<ins>Demo:</ins>**
 ```js
 const array = [1, 2, 3, 4, 5];
 const doubled = map(array, item => item * 2);
 console.log(doubled);
 ```
 
-Result of execution:
+**<ins>Result of execution:</ins>**
 ```markdown
 [ 2, 4, 6, 8, 10 ]
 ```
@@ -129,12 +129,12 @@ The objective of this exercise is to implement a function that takes a CSV file 
 This question treat about fetching the data from the CSV file and parse it into an array of objects.
 To pass the test run for this exercise, the function `pullAndParseCsv` must be implemented instead of `processData`. The function return a promise that resolve the CSV data.
 
-Demo:
+**<ins>Demo:</ins>**
 ```js
 pullAndAnalyzeCsv().then(console.log).catch(console.error);
 ```
 
-Result of execution:
+**<ins>Result of execution:</ins>**
 ```js
 {
     totalContributors: 3977,
@@ -169,13 +169,13 @@ Result of execution:
 
 The feteched data is passed to the function `parseCsvFunctional` that return an array of objects.
 
-Demo:
+**<ins>Demo:</ins>**
 ```js
 const contributions = parseCsvFunctional(csvText);
 console.log(contributions);
 ```
 
-Result of execution:
+**<ins>Result of execution:</ins>**
 ```js
 [
   {
@@ -198,13 +198,13 @@ Result of execution:
 
 This question treat about fetching the first project's name in ascending alphabetic order. It must treat case-insensitive manner and handle diacritics.
 
-Demo:
+**<ins>Demo:</ins>**
 ```js
 const firstProjectName = getFirstProjectName(contributions);
 console.log(firstProjectName);
 ```
 
-Result of execution:
+**<ins>Result of execution:</ins>**
 ```js
 abdera
 ```
@@ -213,14 +213,14 @@ abdera
 
 This question is about getting the number of unique contributors.
 
-Demo:
+**<ins>Demo:</ins>**
 ```js
 const uniqueContributors = unique(contributions, contribution => contribution.username);
 const totalContributors = uniqueContributors.length;
 console.log(totalContributors);
 ```
 
-Result of execution:
+**<ins>Result of execution:</ins>**
 ```js
 3977
 ```
@@ -230,13 +230,13 @@ Result of execution:
 This question is about getting the average length of contributors' name. We're working on unique names.
 Here, we will use the uniqueContributors array from the previous question.
 
-Demo:
+**<ins>Demo:</ins>**
 ```js
 const averageLength = averageLengthContributorName(uniqueContributors);
 console.log(averageLength);
 ```
 
-Result of execution:
+**<ins>Result of execution:</ins>**
 ```js
 14.148101584108625
 ```
@@ -247,14 +247,14 @@ This question is about getting the most active contributor.
 First we will group contribution by username, sorting by contribution count and return the first element.
 We will use the function fetchTop10 (will be used in the next question) to get the first element.
 
-Demo:
+**<ins>Demo:</ins>**
 ```js
 const contributorProjectsCount = groupBy(contributions, contribution => contribution.username);
 const sortedContributorProjectsByCount = sortBy(Object.entries(contributorProjectsCount), a => a[1], 'desc');
 const mostActiveContributor = fetchTop10(sortedContributorProjectsByCount)[0];
 ```
 
-Result of execution:
+**<ins>Result of execution:</ins>**
 ```js
 'jim'
 ```
@@ -264,12 +264,12 @@ Result of execution:
 This question is about getting the 10 most active contributors.
 We will use the function fetchTop10 to get the first 10 elements.
 
-Demo:
+**<ins>Demo:</ins>**
 ```js
 console.log(fetchTop10(sortedContributionProjectsByCount));
 ```
 
-Result of execution:
+**<ins>Result of execution:</ins>**
 ```js
 [
     [ 'jim', 185 ],
