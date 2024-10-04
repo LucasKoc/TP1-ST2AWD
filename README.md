@@ -1,6 +1,4 @@
-# TP1-ST2AWD
-
-TP1 -  ST2AWD - Interface Development and Design (I2 - 2425S7)
+# TP1 -  ST2AWD - Interface Development and Design (I2 - 2425S7)
 
 20-Sept-2024 | SE Promo 2026 | KOCOGLU Lucas
 
